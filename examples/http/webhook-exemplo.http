@@ -1,0 +1,14 @@
+### Exemplo de webhook (recebido pelo teu servidor)
+POST https://teusistema.ao/api/webhooks/pagamentos
+Content-Type: application/json
+X-Signature: {{assinatura-do-fornecedor}}
+
+{
+  "event": "payment.confirmed",
+  "data": {
+    "reference": "ABC123456",
+    "amount": 11499,
+    "currency": "AOA",
+    "paid_at": "2025-08-27T12:00:00Z"
+  }
+}

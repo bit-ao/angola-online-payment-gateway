@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FornecedorPagamentoAngola",
+  "type": "object",
+  "required": ["id", "nome", "categoria", "canais", "documentacao", "estado_info"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9_-]+$" },
+    "nome": { "type": "string", "minLength": 2 },
+    "categoria": { "type": "string" },
+    "canais": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "produtos": { "type": "array", "items": { "type": "string" } },
+    "documentacao": {
+      "type": "object",
+      "properties": {
+        "site": { "type": "string" },
+        "docs_api": { "type": "string" },
+        "portal_merchant": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "integracao": {
+      "type": "object",
+      "properties": {
+        "autenticacao": { "type": "string" },
+        "webhooks": { "type": "boolean" },
+        "sandbox": { "type": "boolean" },
+        "linguagens_suportadas": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": true
+    },
+    "financeiro": {
+      "type": "object",
+      "properties": {
+        "moedas": { "type": "array", "items": { "type": "string" } },
+        "liquidacao": {
+          "type": "object",
+          "properties": {
+            "prazo": { "type": "string" },
+            "tipo": { "type": "string" }
+          },
+          "additionalProperties": true
+        },
+        "taxas": {
+          "type": "object",
+          "properties": {
+            "fixo_aoa": { "type": ["number", "null"] },
+            "percentual": { "type": ["number", "null"] }
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "compliance": {
+      "type": "object",
+      "properties": {
+        "pci_dss": { "type": "string" },
+        "kyc": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "cobertura": {
+      "type": "object",
+      "properties": {
+        "paises": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": true
+    },
+    "contacto": {
+      "type": "object",
+      "properties": {
+        "email": { "type": "string" },
+        "telefone": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "estado_info": { "type": "string", "enum": ["parcial", "confirmada", "obsoleta"] },
+    "fontes": { "type": "array", "items": { "type": "string" } },
+    "observacoes": { "type": "string" }
+  },
+  "additionalProperties": false
+}
