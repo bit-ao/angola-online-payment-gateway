@@ -1,0 +1,38 @@
+id: appx
+nome: "AppX Pagamentos"
+categoria: "agregador"
+canais:
+  - referencia
+  - ecommerce
+produtos:
+  - "Pagamentos por referência"
+  - "Checkout e-commerce"
+documentacao:
+  site: "https://exemplo.appx.ao"
+  docs_api: "https://exemplo.appx.ao/dev/docs"
+  portal_merchant: "https://exemplo.appx.ao/merchant"
+integracao:
+  autenticacao: "API Key"
+  webhooks: true
+  sandbox: true
+  linguagens_suportadas: ["PHP", "JavaScript", "Java"]
+financeiro:
+  moedas: ["AOA"]
+  liquidacao:
+    prazo: "D+2"
+    tipo: "transferência bancária"
+  taxas:
+    fixo_aoa: null
+    percentual: null
+compliance:
+  pci_dss: "Desconhecido"
+  kyc: "Contrato + NIF + IBAN + docs societários"
+cobertura:
+  paises: ["Angola"]
+contacto:
+  email: "parcerias@exemplo.appx.ao"
+  telefone: "+244 xxx xxx xxx"
+estado_info: "parcial"
+fontes:
+  - "https://exemplo.appx.ao/dev/docs"
+observacoes: "Exemplo de fornecedor. Substitui pelos reais."

@@ -1,0 +1,12 @@
+### Exemplo de pedido de referência (para fornecedor fictício)
+POST https://api.exemplo.appx.ao/v1/references
+Content-Type: application/json
+Authorization: Bearer {{API_KEY}}
+
+{
+  "amount": 11499,
+  "currency": "AOA",
+  "order_id": "ord_001",
+  "expires_in": 3600,
+  "callback_url": "https://teusistema.ao/api/webhooks/pagamentos"
+}
